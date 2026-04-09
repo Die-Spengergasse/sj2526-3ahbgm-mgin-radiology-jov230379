@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reservation</title>
+
+    <style>
+        body { font-family: Arial; margin: 20px; }
+
+        input, select {
+            display: block;
+            margin: 5px 0 10px 0;
+            padding: 5px;
+        }
+
+        button {
+            background-color: pink;
+            border: none;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Add Reservation</h2>
+
+<form th:action="@{/reservation/add}" th:object="${reservation}" method="post">
+
+    Patient:
+    <select th:field="*{patientName}">
+        <option th:each="p : ${patients}" th:value="${p}" th:text="${p}"></option>
+    </select>
+
+    Device:
+    <select th:field="*{deviceId}">
+        <option value="MRT">MRT</option>
+        <option value="CT">CT</option>
+        <option value="XRAY">XRAY</option>
+    </select>
+
+    Time:
+    <input type="datetime-local" th:field="*{reservationTime}">
+
+    Body Region:
+    <select th:field="*{bodyRegion}">
+        <option value="Head">Head</option>
+        <option value="Chest">Chest</option>
+        <option value="Abdomen">Abdomen</option>
+        <option value="Knee">Knee</option>
+        <option value="Hips">Hips</option>
+        <option value="Spine">Spine</option>
+
+    </select>
+
+    Comment:
+    <input type="text" th:field="*{comment}">
+
+    <button type="submit">Save</button>
+
+</form>
+
+<a href="/">Back</a>
+
+</body>
+</html>

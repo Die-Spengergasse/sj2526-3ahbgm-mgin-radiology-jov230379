@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Greeting</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Radiology</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: pink;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: hotpink;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h1>Hallo</h1>
-    Datum: <span th:text="${today}"></span>
-    <div>
-        <a href="/patient/list">patient list</a>
-    </div>
-</div>
+
+<h1>Radiology Institute</h1>
+
+<p>Date: <span th:text="${today}"></span></p>
+
+<a href="/patient/add">Add Patient</a>
+<a href="/patient/list">Patient List</a>
+<a href="/reservation/add">Add Reservation</a>
+<a href="/reservation/list">Reservation List</a>
+
 </body>
 </html>

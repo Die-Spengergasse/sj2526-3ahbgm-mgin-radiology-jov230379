@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Patients</title>
+    <title>Reservations</title>
 
     <style>
         body { font-family: Arial; margin: 20px; }
@@ -25,26 +25,28 @@
 </head>
 <body>
 
-<h2>Patient List</h2>
+<h2>Reservation List</h2>
 
 <table>
     <tr>
-        <th>Insurance</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Birth Date</th>
+        <th>Patient</th>
+        <th>Device</th>
+        <th>Time</th>
+        <th>Body Region</th>
+        <th>Comment</th>
     </tr>
 
-    <tr th:each="p : ${patients}">
-        <td th:text="${p.insuranceNumber}"></td>
-        <td th:text="${p.firstName}"></td>
-        <td th:text="${p.surname}"></td>
-        <td th:text="${p.birth}"></td>
+    <tr th:each="r : ${reservations}">
+        <td th:text="${r.patientName}"></td>
+        <td th:text="${r.deviceId}"></td>
+        <td th:text="${r.reservationTime}"></td>
+        <td th:text="${r.bodyRegion}"></td>
+        <td th:text="${r.comment}"></td>
     </tr>
 </table>
 
 <br>
-<a href="/patient/add">Add Patient</a>
+<a href="/reservation/add">Add Reservation</a>
 <a href="/">Back</a>
 
 
