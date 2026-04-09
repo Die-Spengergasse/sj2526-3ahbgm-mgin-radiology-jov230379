@@ -10,7 +10,7 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private Long insuranceNumber; // 🔥 Long statt long (kein 0!)
+    private Long insuranceNumber;
     private String firstName;
     private String surname;
     private String gender;

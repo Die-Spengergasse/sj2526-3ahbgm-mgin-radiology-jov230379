@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 public class Device {
 
     @Id
-    private String id; // MR, CT
+    private String id;
 
     private String type;
     private String room;
