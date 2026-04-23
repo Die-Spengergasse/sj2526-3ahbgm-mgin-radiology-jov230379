@@ -21,6 +21,8 @@
 </head>
 <body>
 
+<p th:if="${fehler}" th:text="${fehler}" style="color:red"></p>
+
 <h2>Add New Patient</h2>
 
 <form th:action="@{/patient/add}" th:object="${patient}" method="post">
@@ -43,6 +45,7 @@
 
     Birth Date:
     <input type="date" th:field="*{birth}">
+
 
     <button type="submit">Save</button>
 

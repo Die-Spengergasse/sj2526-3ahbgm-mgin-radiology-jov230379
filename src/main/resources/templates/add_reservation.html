@@ -21,6 +21,8 @@
 </head>
 <body>
 
+<p th:if="${fehler}" th:text="${fehler}" style="color:red"></p>
+
 <h2>Add Reservation</h2>
 
 <form th:action="@{/reservation/add}" th:object="${reservation}" method="post">
